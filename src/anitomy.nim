@@ -27,7 +27,7 @@ export
 when isMainModule:
   const Filename = "[TaigaSubs]_Toradora!_(2008)_-_01v2_-_Tiger_and_Dragon_[1280x720_H.264_FLAC][1234ABCD].mkv"
 
-  var a = Anitomy.create[]
+  var a = initAnitomy()
   if a.Parse(initAnitomyString(Filename)):
     var elements = a.elements
     echo elements.size, " elements:"

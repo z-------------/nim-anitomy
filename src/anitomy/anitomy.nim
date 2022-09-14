@@ -6,6 +6,8 @@ import ./string
 type
   Anitomy* {.importcpp: "anitomy::Anitomy".} = object
 
+proc initAnitomy*(): Anitomy {.importcpp: "anitomy::Anitomy(@)", constructor.}
+
 proc Parse*(this: var Anitomy; filename: AnitomyString or ptr UncheckedArray[AnitomyChar]): bool {.importcpp: "#.Parse(@)".}
 
 proc elements*(this: var Anitomy): Elements {.importcpp: "#.elements(@)".}
