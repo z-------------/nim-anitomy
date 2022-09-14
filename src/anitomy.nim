@@ -32,8 +32,7 @@ when isMainModule:
     var elements = a.elements
     echo elements.size, " elements:"
 
-    for i in 0..<elements.size:
-      let element = elements.at(i.csizeT)
+    for element in elements:
       echo element.first, ": ", element.second
   else:
     stderr.writeLine "parse failed"
