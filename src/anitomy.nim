@@ -29,10 +29,8 @@ when isMainModule:
 
   var a = initAnitomy()
   if a.Parse(initAnitomyString(Filename)):
-    var elements = a.elements
-    echo elements.size, " elements:"
-
-    for element in elements:
+    echo a.elements.size, " elements:"
+    for element in a.elements:
       echo element.first, ": ", element.second
   else:
     stderr.writeLine "parse failed"

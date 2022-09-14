@@ -56,6 +56,18 @@ proc `end`*(this: Elements): ElementIterator {.importcpp: "#.end(@)".}
 
 proc at*(this: Elements; position: csizeT): ElementPair {.importcpp: "#.at(@)".}
 
+# Value access
+
+proc get*(this: Elements; category: ElementCategory): AnitomyString {.importcpp: "#.get(@)".}
+
+# Modifiers
+
+# Lookup
+
+proc count*(this: Elements; category: ElementCategory): csizeT {.importcpp: "#.count(@)".}
+proc empty*(this: Elements; category: ElementCategory): bool {.importcpp: "#.empty(@)".}
+proc find*(this: Elements; category: ElementCategory): ElementIterator {.importcpp: "#.find(@)".}
+
 {.pop.}
 
 iterator items*(this: Elements): ElementPair =
