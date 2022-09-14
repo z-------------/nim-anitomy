@@ -1,6 +1,9 @@
 {.experimental: "overloadableEnums".}
 
 import ./string
+import pkg/cppstl
+
+export cppstl
 
 {.push header: "anitomy/element.h".}
 
@@ -59,6 +62,7 @@ proc at*(this: Elements; position: csizeT): ElementPair {.importcpp: "#.at(@)".}
 # Value access
 
 proc get*(this: Elements; category: ElementCategory): AnitomyString {.importcpp: "#.get(@)".}
+proc getAll*(this: Elements; category: ElementCategory): CppVector[AnitomyString] {.importcpp: "#.get_all(@)".}
 
 # Modifiers
 
