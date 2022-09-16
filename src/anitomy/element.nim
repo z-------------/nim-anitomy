@@ -1,9 +1,13 @@
 {.experimental: "overloadableEnums".}
 
 import ./string
-import pkg/cppstl
+import pkg/cppstl/[
+  std_pair,
+  std_vector,
+]
 
-export cppstl
+export std_pair
+export std_vector
 
 {.push header: "anitomy/element.h".}
 
@@ -36,9 +40,7 @@ type
     VolumePrefix
     Unknown
   Elements* {.importcpp: "anitomy::Elements".} = object
-  ElementPair* {.importcpp: "anitomy::element_pair_t".} = object # std::pair<ElementCategory, string_t>
-    first*: ElementCategory
-    second*: AnitomyString
+  ElementPair* {.importcpp: "anitomy::element_pair_t".} = CppPair[ElementCategory, AnitomyString]
   ElementIterator* {.importcpp: "anitomy::element_iterator_t".} = object
 
 # Capacity

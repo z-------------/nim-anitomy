@@ -11,4 +11,4 @@ backend       = "cpp"
 # Dependencies
 
 requires "nim >= 1.6.6"
-requires "cppstl >= 0.5.0"
+requires "https://github.com/z-------------/nim-cppstl >= 0.6.0"
